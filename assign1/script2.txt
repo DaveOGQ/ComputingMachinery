@@ -1,0 +1,52 @@
+Script started on 2022-09-26 18:48:41-06:00 [TERM="xterm-256color" TTY="/dev/pts/10" COLUMNS="137" LINES="30"]
+]0;david.otigeorge@csa1:~/cpsc355[?2004hdavid.otigeorge@csa1:~/cpsc355$ gdb assign1b.o
+[?2004l[35;1mGNU gdb (GDB) Fedora 12.1-1.fc36[m
+Copyright (C) 2022 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "aarch64-redhat-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<https://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from [32massign1b.o[m...
+[?2004h
+This GDB supports auto-downloading debuginfo from the following URLs:
+https://debuginfod.fedoraproject.org/ 
+Enable debuginfod for this session? (y or [n]) y
+[?2004lDebuginfod has been enabled.
+To make this setting permanent, add 'set debuginfod enabled on' to .gdbinit.
+(No debugging symbols found in [32massign1b.o[m)
+[?2004h(gdb) b main
+[?2004lBreakpoint 1 at [34m0x4006c4[m
+[?2004h(gdb) b next
+[?2004lBreakpoint 2 at [34m0x40073c[m
+[?2004h(gdb) r
+[?2004lStarting program: [32m/home/ugc/david.otigeorge/cpsc355/assign1b.o[m 
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "[32m/lib64/libthread_db.so.1[m".
+
+Breakpoint 1, [34m0x00000000004006c4[m in [33mmain[m ()
+[?2004h[?2004l[?2004h(gdb) c
+[?2004lContinuing.
+
+Breakpoint 2, [34m0x000000000040073c[m in [33mnext[m ()
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l(-10,-10563) wuth currebnt Max(-10,-10563)
+[34m0x0000000000400740[m in [33mnext[m ()
+[?2004h[?2004l[?2004h(gdb) exit
+[?2004l[?2004hA debugging session is active.
+
+	Inferior 1 [process 1953930] will be killed.
+
+Quit anyway? (y or n) y[Kn[Ky
+[?2004l]0;david.otigeorge@csa1:~/cpsc355[?2004hdavid.otigeorge@csa1:~/cpsc355$ exit
+[?2004lexit
+
+Script done on 2022-09-26 18:49:42-06:00 [COMMAND_EXIT_CODE="0"]

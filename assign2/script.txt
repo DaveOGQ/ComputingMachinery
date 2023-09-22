@@ -1,0 +1,214 @@
+Script started on 2022-10-04 14:49:13-06:00 [TERM="xterm-256color" TTY="/dev/pts/10" COLUMNS="153" LINES="30"]
+]0;david.otigeorge@csa3:~/cpsc355[?2004hdavid.otigeorge@csa3:~/cpsc355$ gdb assign2a.o
+[?2004l[35;1mGNU gdb (GDB) Fedora 12.1-1.fc36[m
+Copyright (C) 2022 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "aarch64-redhat-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<https://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from [32massign2a.o[m...
+[?2004h
+This GDB supports auto-downloading debuginfo from the following URLs:
+https://debuginfod.fedoraproject.org/ 
+Enable debuginfod for this session? (y or [n]) y
+[?2004lDebuginfod has been enabled.
+To make this setting permanent, add 'set debuginfod enabled on' to .gdbinit.
+(No debugging symbols found in [32massign2a.o[m)
+[?2004h(gdb) b main
+[?2004lBreakpoint 1 at [34m0x4006ec[m
+[?2004h(gdb) b step 4[K[K4
+[?2004lBreakpoint 2 at [34m0x40075c[m
+[?2004h(gdb) display i/pc
+[?2004lNo symbol table is loaded.  Use the "file" command.
+[?2004h(gdb) display i/pc$i/pc
+[?2004lNo symbol table is loaded.  Use the "file" command.
+[?2004h(gdb) x[Kdisplay [K/i $pc
+[?2004l1: x/i $pc
+[2m<error: [m[2mNo registers.[m[2m>[m
+[?2004h(gdb) r
+[?2004lStarting program: [32m/home/ugc/david.otigeorge/cpsc355/assign2a.o[m 
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "[32m/lib64/libthread_db.so.1[m".
+
+Breakpoint 1, [34m0x00000000004006ec[m in [33mmain[m ()
+1: x/i $pc
+=> [34m0x4006ec[m <[33mmain[m+8>:	mov	w19, #0x7fc07fc             	// #133957628
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l[34m0x00000000004006f0[m in [33mstep1[m ()
+1: x/i $pc
+=> [34m0x4006f0[m <[33mstep1[m>:	and	w21, w19, #0x55555555
+[?2004h[?2004l[?2004h(gdb) p %[K$w19
+[?2004l$1 = 133957628
+[?2004h(gdb) ni
+[?2004l[34m0x00000000004006f4[m in [33mstep1[m ()
+1: x/i $pc
+=> [34m0x4006f4[m <[33mstep1[m+4>:	lsl	w21, w21, #1
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l[34m0x00000000004006f8[m in [33mstep1[m ()
+1: x/i $pc
+=> [34m0x4006f8[m <[33mstep1[m+8>:	lsr	w22, w19, #1
+[?2004h[?2004l[?2004h(gdb) p %[K$w19[K[K21
+[?2004l$2 = 178784936
+[?2004h(gdb) ni
+[?2004l[34m0x00000000004006fc[m in [33mstep1[m ()
+1: x/i $pc
+=> [34m0x4006fc[m <[33mstep1[m+12>:	and	w22, w22, #0x55555555
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l[34m0x0000000000400700[m in [33mstep1[m ()
+1: x/i $pc
+=> [34m0x400700[m <[33mstep1[m+16>:	orr	w20, w21, w22
+[?2004h[?2004l[?2004h(gdb) p $w22
+[?2004l$3 = 22282580
+[?2004h(gdb) ni
+[?2004l[34m0x0000000000400704[m in [33mstep1[m ()
+1: x/i $pc
+=> [34m0x400704[m <[33mstep1[m+20>:	ldr	w0, [34m0x4007a8[m <[33mstep4[m+76>
+[?2004h[?2004l[?2004h(gdb) ni[K[Ky[Kp &[K$2[K2[Kw20
+[?2004l$4 = 201067516
+[?2004h(gdb) ni
+[?2004l[34m0x0000000000400708[m in [33mstep1[m ()
+1: x/i $pc
+=> [34m0x400708[m <[33mstep1[m+24>:	mov	w1, w19
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l[34m0x000000000040070c[m in [33mstep1[m ()
+1: x/i $pc
+=> [34m0x40070c[m <[33mstep1[m+28>:	mov	w2, w20
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l[34m0x0000000000400710[m in [33mstep1[m ()
+1: x/i $pc
+=> [34m0x400710[m <[33mstep1[m+32>:	bl	[34m0x400540[m <[33mprintf@plt[m>
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004loriginal: 0x07fc07fc  reversed: 0x0bfc0bfc
+original: 0x07fc07fc  reversed: 0x0ef30ef3
+original: 0x07fc07fc  reversed: 0xe03fe03f
+
+Breakpoint 2, [34m0x000000000040075c[m in [33mstep4[m ()
+1: x/i $pc
+=> [34m0x40075c[m <[33mstep4[m>:	lsl	w21, w20, #24
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l[34m0x0000000000400760[m in [33mstep4[m ()
+1: x/i $pc
+=> [34m0x400760[m <[33mstep4[m+4>:	and	w22, w20, #0xff00
+[?2004h[?2004l[?2004h(gdb) p $w19[K[K21
+[?2004l$5 = 1056964608
+[?2004h(gdb) ni
+[?2004l[34m0x0000000000400764[m in [33mstep4[m ()
+1: x/i $pc
+=> [34m0x400764[m <[33mstep4[m+8>:	lsl	w22, w20, #8
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l[34m0x0000000000400768[m in [33mstep4[m ()
+1: x/i $pc
+=> [34m0x400768[m <[33mstep4[m+12>:	lsr	w23, w20, #8
+[?2004h[?2004l[?2004h(gdb) p$[K $w22
+[?2004l$6 = 1071660800
+[?2004h(gdb) ni
+[?2004l[34m0x000000000040076c[m in [33mstep4[m ()
+1: x/i $pc
+=> [34m0x40076c[m <[33mstep4[m+16>:	and	w23, w23, #0xff00
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l[34m0x0000000000400770[m in [33mstep4[m ()
+1: x/i $pc
+=> [34m0x400770[m <[33mstep4[m+20>:	lsr	w24, w20, #24
+[?2004h[?2004l[?2004h(gdb) p $w23
+[?2004l$7 = 16128
+[?2004h(gdb) ni
+[?2004l[34m0x0000000000400774[m in [33mstep4[m ()
+1: x/i $pc
+=> [34m0x400774[m <[33mstep4[m+24>:	orr	w20, w21, w22
+[?2004h[?2004l[?2004h(gdb) p %[K$w24
+[?2004l$8 = 224
+[?2004h(gdb) ni
+[?2004l[34m0x0000000000400778[m in [33mstep4[m ()
+1: x/i $pc
+=> [34m0x400778[m <[33mstep4[m+28>:	orr	w20, w20, w23
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l[34m0x000000000040077c[m in [33mstep4[m ()
+1: x/i $pc
+=> [34m0x40077c[m <[33mstep4[m+32>:	orr	w20, w20, w24
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l[34m0x0000000000400780[m in [33mstep4[m ()
+1: x/i $pc
+=> [34m0x400780[m <[33mstep4[m+36>:	ldr	w0, [34m0x4007a8[m <[33mstep4[m+76>
+[?2004h[?2004l[?2004h(gdb) p $w20
+[?2004l$9 = 1071661024
+[?2004h(gdb) ni 
+[?2004l[34m0x0000000000400784[m in [33mstep4[m ()
+1: x/i $pc
+=> [34m0x400784[m <[33mstep4[m+40>:	mov	w1, w19
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l[34m0x0000000000400788[m in [33mstep4[m ()
+1: x/i $pc
+=> [34m0x400788[m <[33mstep4[m+44>:	mov	w2, w20
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l[34m0x000000000040078c[m in [33mstep4[m ()
+1: x/i $pc
+=> [34m0x40078c[m <[33mstep4[m+48>:	bl	[34m0x400540[m <[33mprintf@plt[m>
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004loriginal: 0x07fc07fc  reversed: 0x3fe03fe0
+[34m0x0000000000400790[m in [33mstep4[m ()
+1: x/i $pc
+=> [34m0x400790[m <[33mstep4[m+52>:	ldr	w0, [34m0x4007ac[m <[33mstep4[m+80>
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l[34m0x0000000000400794[m in [33mstep4[m ()
+1: x/i $pc
+=> [34m0x400794[m <[33mstep4[m+56>:	mov	w1, w19
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l[34m0x0000000000400798[m in [33mstep4[m ()
+1: x/i $pc
+=> [34m0x400798[m <[33mstep4[m+60>:	mov	w2, w20
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l[34m0x000000000040079c[m in [33mstep4[m ()
+1: x/i $pc
+=> [34m0x40079c[m <[33mstep4[m+64>:	bl	[34m0x400540[m <[33mprintf@plt[m>
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004loriginal: 0b00000111111111000000011111111100 reversed: 0b00111111111000000011111111100000
+[34m0x00000000004007a0[m in [33mstep4[m ()
+1: x/i $pc
+=> [34m0x4007a0[m <[33mstep4[m+68>:	ldp	x29, x30, [sp], #16
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l[34m0x00000000004007a4[m in [33mstep4[m ()
+1: x/i $pc
+=> [34m0x4007a4[m <[33mstep4[m+72>:	ret
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l[33m__libc_start_call_main[m ([36mmain[m=0x4005b4 <_start+52>, [36mmain@entry[m=0x3fe03f00, [36margc[m=1, [36margc@entry[m=1071661024, [36margv[m=0xfffffffff208, [36margv@entry[m=0x7fc07fc) at [32m../sysdeps/nptl/libc_start_call_main.h[m:74
+Downloading 0.00 MB source file [32m/usr/src/debug/glibc-2.35-15.fc36.aarch64/csu/../sysdeps/nptl/libc_start_call_main.h[m
+74	  [01mexit[m [31m([mresult[31m);[m
+1: x/i $pc
+=> [34m0xfffff7e373c8[m <[33m__libc_start_call_main[m+120>:	bl	[34m0xfffff7e4d480[m[m in [33mstep4[m ()
+1: x/i $pc
+=> [34m0x40079c[m <[33mstep4[m+64>:	bl	[34m0x400540[m <[33mprintf@plt[m>
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004loriginal: 0b00000111111111000000011111111100 reversed: 0b00111111111000000011111111100000
+[34m0x00000000004007a0[m in [33mstep4[m ()
+1: x/i $pc
+=> [34m0x4007a0[m <[33mstep4[m+68>:	ldp	x29, x30, [sp], #16
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l[34m0x00000000004007a4[m in [33mstep4[m ()
+1: x/i $pc
+=> [34m0x4007a4[m <[33mstep4[m+72>:	ret
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l[33m__libc_start_call_main[m ([36mmain[m=0x4005b4 <_start+52>, [36mmain@entry[m=0x3fe03f00, [36margc[m=1, [36margc@entry[m=1071661024, [36margv[m=0xfffffffff208, [36margv@entry[m=0x7fc07fc) at [32m../sysdeps/nptl/libc_start_call_main.h[m:74
+Downloading 0.00 MB source file [32m/usr/src/debug/glibc-2.35-15.fc36.aarch64/csu/../sysdeps/nptl/libc_start_call_main.h[m
+74	  [01mexit[m [31m([mresult[31m);[m
+1: x/i $pc
+=> [34m0xfffff7e373c8[m <[33m__libc_start_call_main[m+120>:	bl	[34m0xfffff7e4d480[m <[33m__GI_exit[m>
+[?2004h[?2004l[?2004h(gdb) exit
+[?2004l[?2004hA debugging session is active.
+
+	Inferior 1 [process 2970735] will be killed.
+
+Quit anyway? (y or n) y
+[?2004l]0;david.otigeorge@csa3:~/cpsc355[?2004hdavid.otigeorge@csa3:~/cpsc355$ exit
+[?2004lexit
+Script done.
+
+Script done on 2022-10-04 15:25:31-06:00 [COMMAND_EXIT_CODE="90"]

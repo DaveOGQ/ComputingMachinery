@@ -1,0 +1,217 @@
+Script started on 2022-11-04 14:33:30-06:00 [TERM="xterm-256color" TTY="/dev/pts/45" COLUMNS="166" LINES="43"]
+bash: alias: java org.junit.runner.JUnitCore: not found
+]0;david.otigeorge@csa3:~/cpsc355[?2004hdavid.otigeorge@csa3:~/cpsc355$ exit[K[K[K[Kgdb assign4.o
+[?2004l[35;1mGNU gdb (GDB) Fedora 12.1-1.fc36[m
+Copyright (C) 2022 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "aarch64-redhat-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<https://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from [32massign4.o[m...
+[?2004h
+This GDB supports auto-downloading debuginfo from the following URLs:
+https://debuginfod.fedoraproject.org/ 
+Enable debuginfod for this session? (y or [n]) y
+[?2004lDebuginfod has been enabled.
+To make this setting permanent, add 'set debuginfod enabled on' to .gdbinit.
+(No debugging symbols found in [32massign4.o[m)
+[?2004h(gdb) displayx[K/i $pc
+[?2004l1: x/i $pc
+[2m<error: [m[2mNo registers.[m[2m>[m
+[?2004h(gdb) b gb1[K[Kdb1
+[?2004lBreakpoint 1 at [34m0x4008c0[m
+[?2004h(gdb) b gdb1[K2
+[?2004lBreakpoint 2 at [34m0x4008c4[m
+[?2004h(gdb) b gdb2[K3
+[?2004lBreakpoint 3 at [34m0x400910[m
+[?2004h(gdb) b gdb3[K3[K4
+[?2004lBreakpoint 4 at [34m0x400914[m
+[?2004h(gdb) r
+[?2004lStarting program: [32m/home/ugc/david.otigeorge/cpsc355/assign4.o[m 
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "[32m/lib64/libthread_db.so.1[m".
+
+Breakpoint 1, [34m0x00000000004008c0[m in [33mgdb1[m ()
+1: x/i $pc
+=> [34m0x4008c0[m <[33mgdb1[m+4>:	bl	[34m0x400734[m <[33mnewCuboid[m>
+[?2004h[?2004l[?2004h(gdb) x/6d x[K%[K[K $x19
+[?2004l[34m0xffffffffefa0[m:	0	0	2	2
+[34m0xffffffffefb0[m:	3	12
+[?2004h(gdb) c
+[?2004lContinuing.
+
+Breakpoint 2, [34m0x00000000004008c4[m in [33mgdb2[m ()
+1: x/i $pc
+=> [34m0x4008c4[m <[33mgdb2[m>:	ldr	x0, [34m0x400960[m <[33mgdb4[m+76>
+[?2004h[?2004l[?2004h(gdb) cx/6d $x19[K[K20
+[?2004l[34m0xffffffffefb8[m:	0	0	2	2
+[34m0xffffffffefc8[m:	3	12
+[?2004h(gdb) c
+[?2004lContinuing.
+Initial cuboid values:
+Cuboid first origin = (0, 0)
+	Base width = 2 Base length = 2
+	Height = 3
+	Volume =12
+
+Cuboid second origin = (0, 0)
+	Base width = 2 Base length = 2
+	Height = 3
+	Volume =12
+
+
+Breakpoint 3, [34m0x0000000000400910[m in [33mgdb3[m ()
+1: x/i $pc
+=> [34m0x400910[m <[33mgdb3[m+8>:	bl	[34m0x4007a0[m <[33mscale[m>
+[?2004h[?2004l[?2004h(gdb) p $w0
+[?2004l$1 = 281474976706488
+[?2004h(gdb) p $w0c[Kx/6d $x20[C[C[C[C[C[Cc[Kx/6d $x20[K[K100[K[K9
+[?2004l[34m0xffffffffefa0[m:	3	-6	2	2
+[34m0xffffffffefb0[m:	3	12
+[?2004h(gdb) c
+[?2004lContinuing.
+
+Breakpoint 4, [34m0x0000000000400914[m in [33mgdb4[m ()
+1: x/i $pc
+=> [34m0x400914[m <[33mgdb4[m>:	ldr	x0, [34m0x400978[m <[33mgdb4[m+100>
+[?2004h[?2004l[?2004h(gdb) cx/6d $x19[K[K20
+[?2004l[34m0xffffffffefb8[m:	0	0	8	8
+[34m0xffffffffefc8[m:	12	768
+[?2004h(gdb) c
+[?2004lContinuing.
+Changed cuboid values:
+Cuboid first origin = (3, -6)
+	Base width = 2 Base length = 2
+	Height = 3
+	Volume =12
+
+Cuboid second origin = (0, 0)
+	Base width = 8 Base length = 8
+	Height = 12
+	Volume =768
+
+[Inferior 1 (process 2330807) exited with code 016]
+[?2004h[?2004l[?2004h(gdb) exit
+[?2004l]0;david.otigeorge@csa3:~/cpsc355[?2004hdavid.otigeorge@csa3:~/cpsc355$ exit
+[?2004lexit
+
+Script done on 2022-11-04 14:36:27-06:00 [COMMAND_EXIT_CODE="0"]
+[K[13@m4 assign4.asm >[C[C[C[C[C[C[C[C[C[C[13Pgcc[C[C[C[C[C[C[C[C[C[C -o assign4.o./a.out[K[3Pexitgdb assign4.o[Kscript.[K script.txt
+[?2004lScript started, output log file is 'script.txt'.
+bash: alias: java org.junit.runner.JUnitCore: not found
+]0;david.otigeorge@csa3:~/cpsc355[?2004hdavid.otigeorge@csa3:~/cpsc355$ exit[K[K[K[Kgdb assign4.o
+[?2004l[35;1mGNU gdb (GDB) Fedora 12.1-1.fc36[m
+Copyright (C) 2022 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "aarch64-redhat-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<https://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from [32massign4.o[m...
+[?2004h
+This GDB supports auto-downloading debuginfo from the following URLs:
+https://debuginfod.fedoraproject.org/ 
+Enable debuginfod for this session? (y or [n]) y
+[?2004lDebuginfod has been enabled.
+To make this setting permanent, add 'set debuginfod enabled on' to .gdbinit.
+(No debugging symbols found in [32massign4.o[m)
+[?2004h(gdb) displayx[K/i $pc
+[?2004l1: x/i $pc
+[2m<error: [m[2mNo registers.[m[2m>[m
+[?2004h(gdb) b gb1[K[Kdb1
+[?2004lBreakpoint 1 at [34m0x4008c0[m
+[?2004h(gdb) b gdb1[K2
+[?2004lBreakpoint 2 at [34m0x4008c4[m
+[?2004h(gdb) b gdb2[K3
+[?2004lBreakpoint 3 at [34m0x400910[m
+[?2004h(gdb) b gdb3[K3[K4
+[?2004lBreakpoint 4 at [34m0x400914[m
+[?2004h(gdb) r
+[?2004lStarting program: [32m/home/ugc/david.otigeorge/cpsc355/assign4.o[m 
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "[32m/lib64/libthread_db.so.1[m".
+
+Breakpoint 1, [34m0x00000000004008c0[m in [33mgdb1[m ()
+1: x/i $pc
+=> [34m0x4008c0[m <[33mgdb1[m+4>:	bl	[34m0x400734[m <[33mnewCuboid[m>
+[?2004h[?2004l[?2004h(gdb) x/6d x[K%[K[K $x19
+[?2004l[34m0xffffffffefa0[m:	0	0	2	2
+[34m0xffffffffefb0[m:	3	12
+[?2004h(gdb) c
+[?2004lContinuing.
+
+Breakpoint 2, [34m0x00000000004008c4[m in [33mgdb2[m ()
+1: x/i $pc
+=> [34m0x4008c4[m <[33mgdb2[m>:	ldr	x0, [34m0x400960[m <[33mgdb4[m+76>
+[?2004h[?2004l[?2004h(gdb) cx/6d $x19[K[K20
+[?2004l[34m0xffffffffefb8[m:	0	0	2	2
+[34m0xffffffffefc8[m:	3	12
+[?2004h(gdb) c
+[?2004lContinuing.
+Initial cuboid values:
+Cuboid first origin = (0, 0)
+	Base width = 2 Base length = 2
+	Height = 3
+	Volume =12
+
+Cuboid second origin = (0, 0)
+	Base width = 2 Base length = 2
+	Height = 3
+	Volume =12
+
+
+Breakpoint 3, [34m0x0000000000400910[m in [33mgdb3[m ()
+1: x/i $pc
+=> [34m0x400910[m <[33mgdb3[m+8>:	bl	[34m0x4007a0[m <[33mscale[m>
+[?2004h[?2004l
+[?2004h(gdb) p $w0c[Kx/6d $x20[C[C[C[C[C[Cc[Kx/6d $x20[K[K100[K[K9
+[?2004l[34m0xffffffffefa0[m:	3	-6	2	2
+[34m0xffffffffefb0[m:	3	12
+[?2004h(gdb) c
+[?2004lContinuing.
+
+Breakpoint 4, [34m0x0000000000400914[m in [33mgdb4[m ()
+1: x/i $pc
+=> [34m0x400914[m <[33mgdb4[m>:	ldr	x0, [34m0x400978[m <[33mgdb4[m+100>
+[?2004h[?2004l[?2004h(gdb) cx/6d $x19[K[K20
+[?2004l[34m0xffffffffefb8[m:	0	0	8	8
+[34m0xffffffffefc8[m:	12	768
+[?2004h(gdb) c
+[?2004lContinuing.
+Changed cuboid values:
+Cuboid first origin = (3, -6)
+	Base width = 2 Base length = 2
+	Height = 3
+	Volume =12
+
+Cuboid second origin = (0, 0)
+	Base width = 8 Base length = 8
+	Height = 12
+	Volume =768
+
+[Inferior 1 (process 2330807) exited with code 016]
+[?2004h[?2004l[?2004h(gdb) exit
+[?2004l]0;david.otigeorge@csa3:~/cpsc355[?2004hdavid.otigeorge@csa3:~/cpsc355$ exit
+[?2004lexit
+Script done.
+]0;david.otigeorge@csa3:~/cpsc355[?2004hdavid.otigeorge@csa3:~/cpsc355$ exit
+[?2004lexit
+
+Script done on 2022-11-04 14:36:48-06:00 [COMMAND_EXIT_CODE="0"]
